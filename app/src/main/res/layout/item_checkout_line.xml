@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppCardNeutral"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="@android:color/darker_gray"
+    app:strokeWidth="1dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardForegroundColor="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Item image -->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/qtyRow" />
+
+        <!-- Remove (X) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRemove"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            android:contentDescription="@string/a11y_remove_item"
+            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+            app:iconSize="24dp"
+            app:iconTint="@android:color/holo_red_dark"
+            app:iconGravity="textStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintEnd_toStartOf="@id/btnRemove"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Options (size · crust · topping · notes) -->
+        <TextView
+            android:id="@+id/options"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginTop="2dp" />
+
+        <!-- Qty row: [-]  qty  [+] -->
+        <LinearLayout
+            android:id="@+id/qtyRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/options"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMinus"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:contentDescription="@string/a11y_decrease_qty"
+                app:tooltipText="@string/a11y_decrease_qty"
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_remove_24"
+                app:iconSize="24dp"
+                app:cornerRadius="20dp"
+                android:textColor="@android:color/black"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:id="@+id/qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:minWidth="32dp"
+                android:text="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlus"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="0dp"
+                android:textColor="@android:color/black"
+                android:contentDescription="@string/a11y_increase_qty"
+                app:iconSize="24dp"
+                app:cornerRadius="20dp"
+                app:tooltipText="@string/a11y_increase_qty"
+                app:icon="@drawable/ic_add_24"
+                app:iconGravity="textStart"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
+        <!-- Line price at the end, vertically aligned with qty row -->
+        <TextView
+            android:id="@+id/linePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/qtyRow"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

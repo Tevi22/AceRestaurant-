@@ -1,0 +1,36 @@
+{
+  "categories": [
+    { "id": "appetizers", "title": "Appetizers" },
+    { "id": "entrees",    "title": "Entrées" },
+    { "id": "desserts",   "title": "Desserts" }
+  ],
+  "items": [
+    { "id": "bruschetta", "category": "appetizers", "name": "Bruschetta", "price": 6.49, "image": "image/Bruschetta.jpeg", "description": "Grilled bread topped with tomatoes, basil, and olive oil." },
+    { "id": "garlic_knots", "category": "appetizers", "name": "Garlic Knots", "price": 5.29, "image": "image/garlic_knots.jpeg", "description": "Warm knots brushed with garlic butter and herbs." },
+    { "id": "mozz_sticks", "category": "appetizers", "name": "Mozzarella Sticks", "price": 7.19, "image": "image/Mozzarella_Sticks.jpg", "description": "Crispy fried mozzarella with marinara." },
+    { "id": "wings_bbq", "category": "appetizers", "name": "BBQ Wings", "price": 8.99, "image": "image/bbq_wings.jpeg", "description": "Oven-baked chicken wings in house BBQ sauce." },
+    { "id": "caprese_skewers", "category": "appetizers", "name": "Caprese Skewers", "price": 6.99, "image": "image/Caprese_Skewers.jpg", "description": "Tomato, mozzarella, and basil with balsamic glaze." },
+    { "id": "spin_artichoke_dip", "category": "appetizers", "name": "Spinach Artichoke Dip", "price": 7.49, "image": "image/artichoke_dip.jpg", "description": "Creamy dip with chips and veggies." },
+    { "id": "caesar_salad", "category": "appetizers", "name": "Caesar Salad", "price": 7.29, "image": "image/caesar_salad.jpg", "description": "Romaine, parmesan, croutons, Caesar dressing." },
+
+    { "id": "margherita_pizza", "category": "entrees", "name": "Margherita Pizza", "price": 11.99, "image": "image/margherita_pizza.jpg", "description": "Tomato, fresh mozzarella, basil, and EVOO.", "sizes": ["Small", "Medium", "Large"],
+      "crusts": ["Thin", "Hand-tossed", "Deep Dish"],
+      "toppings": ["Extra Cheese", "Pepperoni", "Mushrooms", "Onions"]},
+    { "id": "pepperoni_pizza", "category": "entrees", "name": "Pepperoni Pizza", "price": 12.49, "image": "image/pepperoni_pizza.jpg", "description": "Classic pepperoni with mozzarella.","sizes": ["Small", "Medium", "Large"],
+      "crusts": ["Thin", "Hand-tossed", "Deep Dish"],
+      "toppings": ["Extra Cheese", "Pepperoni", "Mushrooms", "Onions"] },
+    { "id": "house_burger", "category": "entrees", "name": "House Burger", "price": 10.99, "image": "image/house_burger.jpg", "description": "Grilled beef, lettuce, tomato, onion, special sauce." },
+    { "id": "grilled_chicken", "category": "entrees", "name": "Grilled Chicken Plate", "price": 12.79, "image": "image/chicken_plate.jpg", "description": "Herb-marinated chicken with seasonal veggies." },
+    { "id": "salmon_lemon", "category": "entrees", "name": "Lemon Herb Salmon", "price": 14.99, "image": "image/lemon_salmon.jpeg", "description": "Pan-seared salmon with lemon herb butter." },
+    { "id": "pasta_alfredo", "category": "entrees", "name": "Fettuccine Alfredo", "price": 12.59, "image": "image/fettuccine_alfredo.jpg", "description": "Creamy alfredo sauce tossed with fettuccine." },
+    { "id": "veggie_bowl", "category": "entrees", "name": "Roasted Veggie Bowl", "price": 11.29, "image": "image/roasted_veggie_bowl.jpeg", "description": "Quinoa, roasted veggies, tahini drizzle." },
+    { "id": "steak_frites", "category": "entrees", "name": "Steak Frites", "price": 15.99, "image": "image/steak_frites.jpg", "description": "Flat-iron steak with fries and aioli." },
+    { "id": "shrimp_tacos", "category": "entrees", "name": "Shrimp Tacos", "price": 12.99, "image": "image/shrimp_tacos.jpg", "description": "Citrus slaw, pico de gallo, chipotle crema." },
+
+    { "id": "lava_cake", "category": "desserts", "name": "Chocolate Lava Cake", "price": 6.49, "image": "image/lava_cake.jpg", "description": "Warm cake with molten chocolate center." },
+    { "id": "cheesecake", "category": "desserts", "name": "New York Cheesecake", "price": 6.29, "image": "image/cheesecake.jpg", "description": "Rich cheesecake with graham crust." },
+    { "id": "tiramisu", "category": "desserts", "name": "Tiramisu", "price": 6.79, "image": "image/tiramisu.jpg", "description": "Espresso-soaked ladyfingers and mascarpone." },
+    { "id": "gelato_trio", "category": "desserts", "name": "Gelato Trio", "price": 5.99, "image": "image/gelato_trio.jpeg", "description": "Three seasonal gelato flavors." },
+    { "id": "apple_tart", "category": "desserts", "name": "Caramel Apple Tart", "price": 6.19, "image": "image/apple_tart.jpg", "description": "Buttery tart with warm apples and caramel." }
+  ]
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Global action to Cart (used from anywhere) -->
+    <action
+        android:id="@+id/action_global_cartFragment"
+        app:destination="@id/cartFragment" />
+
+    <!-- Global action to Menu (used from anywhere) -->
+    <action
+        android:id="@+id/action_global_menuFragment"
+        app:destination="@id/menuFragment" />
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.acerestaurant.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_menu"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <!-- Menu (parent host for tabs) -->
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.acerestaurant.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
+
+        <!-- From Menu -> Detail -->
+        <action
+            android:id="@+id/action_menu_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <!-- Detail -->
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.acerestaurant.ui.detail.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail">
+
+        <!-- Safe Args for the selected item -->
+        <argument
+            android:name="menuItemId"
+            app:argType="string"
+            android:defaultValue="" />
+        <!-- REMOVE any action here; source is Menu -->
+    </fragment>
+
+    <!-- Cart -->
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.acerestaurant.ui.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart">
+
+        <!-- This must be INSIDE cartFragment -->
+        <action
+            android:id="@+id/action_cart_to_checkout"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <!-- Checkout -->
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.acerestaurant.ui.checkout.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/fragment_checkout">
+
+        <!-- From Checkout -> Confirmation -->
+        <action
+            android:id="@+id/action_checkout_to_confirmation"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+
+    <!-- Confirmation -->
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.acerestaurant.ui.checkout.ConfirmationFragment"
+        android:label="Confirmation"
+        tools:layout="@layout/fragment_confirmation">
+
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <argument
+            android:name="etaText"
+            app:argType="string" />
+        <argument
+            android:name="customerName"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
